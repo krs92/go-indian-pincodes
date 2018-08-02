@@ -28,5 +28,5 @@ go get github.com/krs92/go-indian-pincodes
 
 
 ## TO-DO
-*Get Pincode from district 
-*Get picode from Statename
+* Get Pincode from district 
+* Get picode from Statename
