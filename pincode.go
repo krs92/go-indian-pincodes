@@ -21,14 +21,14 @@ type Pincodes []Pincode
 
 func Lookup(data int64) (interface{}, error) {
 	// Open our jsonFile
-	jsonFile, err := os.Open("./pincodes.json")
+	jsonFile, err :=  http.Get("https://github.com/krs92/go-indian-pincodes/blob/master/pincodes.json?raw=true")
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		fmt.Println(err)
 	}
 	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
-	byteValue, _ := ioutil.ReadAll(jsonFile)
+	defer jsonFile.Body.Close()
+	byteValue, _ := ioutil.ReadAll(jsonFile.Body)
 
 	var pincode Pincodes
 	json.Unmarshal(byteValue, &pincode)
