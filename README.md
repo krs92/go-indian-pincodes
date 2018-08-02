@@ -9,7 +9,7 @@ go get github.com/krs92/go-indian-pincodes
 ## Getting Started
 
 ```go
-  pincode, err := Lookup(504293)
+  data, err := pincode.Lookup(504293)
   
   and Response will be 
   
